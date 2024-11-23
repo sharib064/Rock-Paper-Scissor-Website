@@ -4,13 +4,13 @@ phases:
   install:
     commands:
       - echo Installing NGINX
-      - sudo apt-get install nginx
       - sudo apt-get update
+      - sudo apt-get install -y nginx
 
   build:
     commands:
-      - echo Build started on `date`
-      - cp index.html /var/www/html
+      - echo "Build started on $(date)"
+      - sudo cp index.html /var/www/html
 
   post_build:
     commands:
